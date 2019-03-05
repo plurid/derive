@@ -7,7 +7,7 @@ fn main() {
     let app = App::new("deversion")
                 .version(env!("CARGO_PKG_VERSION"))
                 .author(env!("CARGO_PKG_AUTHORS"))
-                .about("Always-active, character-for-character version control system")
+                .about(env!("CARGO_PKG_DESCRIPTION"))
                 .help_message("Print help")
                 .version_message("Print version")
                 .subcommand(SubCommand::with_name("init")
