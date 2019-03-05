@@ -16,4 +16,4 @@
 </h1>
 
 
-Always-active, character-for-character version control system
+Always-Active, Character-for-Character Distributed Version Control System
