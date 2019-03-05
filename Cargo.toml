@@ -3,6 +3,10 @@ name = "deversion"
 version = "0.1.0"
 authors = ["Jan Cavel <caveljan@gmail.com>"]
 edition = "2018"
+description = "Always-active, character-for-character version control system"
+readme = "./README"
+license = "MIT"
+repository = "https://github.com/plurid/deversion"
 
 [[bin]]
 name = "dev"
