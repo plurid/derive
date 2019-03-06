@@ -2,6 +2,9 @@ extern crate clap;
 
 
 use std::env;
+use std::fs;
+use std::io;
+use std::path::PathBuf;
 use clap::{App, Arg, SubCommand};
 
 
@@ -44,12 +47,32 @@ fn main() {
 
 fn init(directory: &str) {
     println!("'dev init' was run.");
+    let dev_dir = create_dev_dir(directory);
+
+    println!("{:?}", dev_dir);
+}
+
+fn create_dev_dir(directory: &str) -> PathBuf {
+    let mut directory_path;
+    let dev_dir = ".dev";
+    let could_not_create = "could not create directory";
+    let path = env::current_dir().unwrap();
+
     if directory.is_empty() {
-        let path = env::current_dir().unwrap();
-        println!("{}", path.display());
+        directory_path = path.to_path_buf();
     } else {
-        println!("{}", directory);
+        directory_path = PathBuf::from(directory);
     }
+
+    directory_path.push(dev_dir);
+    create_dir(directory_path).expect(could_not_create);
+
+    PathBuf::from(directory)
+}
+
+fn create_dir(directory_path: PathBuf) -> io::Result<()> {
+    fs::create_dir_all(directory_path)?;
+    Ok(())
 }
 
 
