@@ -7,6 +7,9 @@ use std::io;
 use std::path::PathBuf;
 use clap::{App, Arg, SubCommand};
 
+// mod deversion;
+// mod repository;
+
 
 fn main() {
     let app = App::new("deversion")
@@ -24,8 +27,14 @@ fn main() {
                     .arg(Arg::with_name("description")
                         .short("d")
                         .long("description")
-                        .help("description of the save")
+                        .help("Description of the save")
                         .required(false)));
+                // .subcommand(SubCommand::with_name("add")
+                //     .about("Add file(s) to be tracked")
+                // .subcommand(SubCommand::with_name("to")
+                //     .about("Travel to a point in time")
+                // .subcommand(SubCommand::with_name("log")
+                //     .about("List all the saves.");
 
     let matches = app.get_matches();
 
@@ -37,10 +46,13 @@ fn main() {
     }
 
     match matches.subcommand_name() {
-        Some("init") => init(init_directory),
-        Some("save") => save(),
-        None         => println!("No subcommand was used"),
-        _            => println!("Some other subcommand was used"),
+        Some("init")    => init(init_directory),
+        Some("save")    => save(),
+        Some("add")     => add(),
+        Some("to")      => to(),
+        Some("log")     => log(),
+        None            => println!("No subcommand was used"),
+        _               => println!("Some other subcommand was used"),
     }
 }
 
@@ -78,4 +90,16 @@ fn create_dir(directory_path: PathBuf) -> io::Result<()> {
 
 fn save() {
     println!("'dev save' was run.");
+}
+
+fn add() {
+    println!("'dev add' was run.");
+}
+
+fn to() {
+    println!("'dev to' was run.");
+}
+
+fn log() {
+    println!("'dev log' was run.");
 }
