@@ -1,12 +1,12 @@
 [package]
-name = "deversion"
+name = "derive"
 version = "0.1.0"
 authors = ["Jan Cavel <caveljan@gmail.com>"]
 edition = "2018"
 description = "Always-Active, Character-for-Character Distributed Version Control System"
 readme = "README.md"
 license = "MIT"
-repository = "https://github.com/plurid/deversion"
+repository = "https://github.com/plurid/derive"
 
 [[bin]]
 name = "dev"

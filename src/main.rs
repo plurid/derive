@@ -12,7 +12,7 @@ use clap::{App, Arg, SubCommand};
 
 
 fn main() {
-    let app = App::new("deversion")
+    let app = App::new("derive")
                 .version(env!("CARGO_PKG_VERSION"))
                 .author(env!("CARGO_PKG_AUTHORS"))
                 .about(env!("CARGO_PKG_DESCRIPTION"))
