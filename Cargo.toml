@@ -1,7 +1,7 @@
 [package]
 name = "derive"
 version = "0.1.0"
-authors = ["Jan Cavel <caveljan@gmail.com>"]
+authors = ["ly3xqhl8g9 <ly3xqhl8g9@plurid.com>"]
 edition = "2018"
 description = "Always-Active, Character-for-Character Distributed Version Control System"
 readme = "README.md"
